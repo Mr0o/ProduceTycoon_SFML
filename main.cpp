@@ -9,10 +9,8 @@
 
 int main()
 {
-    // this is a test comment
-    int window_width = 800;
+	int window_width = 800;
 	int window_height = 600;
-	const int bpp = 32;
 
 	// delta time variables
 	sf::Clock clock;
@@ -26,7 +24,7 @@ int main()
 	sf::Time previousTime = frameTime.getElapsedTime();
 	sf::Time currentTime;
 
-	sf::RenderWindow window(sf::VideoMode(window_width, window_height, bpp), "Produce Tycoon SFML", sf::Style::Titlebar | sf::Style::Close | sf::Style::Resize);
+	sf::RenderWindow window(sf::VideoMode(window_width, window_height), "Produce Tycoon SFML", sf::Style::Resize | sf::Style::Close);
 	window.setVerticalSyncEnabled(true);
 
 	// set the icon for the window
@@ -45,6 +43,7 @@ int main()
 	text.setFillColor(sf::Color::White);
 	text.setPosition(10, 10);
 
+	// main loop
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -73,6 +72,8 @@ int main()
 		while (elapsed >= update_ms)
 		{
 			const auto delta = update_ms.asSeconds();
+
+			// update game logic here
 
 			elapsed -= update_ms;
 		}
