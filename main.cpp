@@ -9,7 +9,8 @@
 
 int main()
 {
-	int window_width = 800;
+    // this is a test comment
+    int window_width = 800;
 	int window_height = 600;
 	const int bpp = 32;
 
