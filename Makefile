@@ -7,9 +7,12 @@ FLAGS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 # path to the source files
 SRC_PATH = ./src
 
+# path to the bin directory
+BIN_PATH = ./bin
+
 build:./$(SRC_PATH)/main.cpp
-	g++ -c $(SRC_PATH)/main.cpp -o main.o
-	g++ main.o -o $(APP_NAME) $(FLAGS)
+	g++ -c $(SRC_PATH)/main.cpp -o $(BIN_PATH)/main.o
+	g++ $(BIN_PATH)/main.o -o $(APP_NAME) $(FLAGS)
 
 run:
 	./$(APP_NAME)
@@ -17,4 +20,4 @@ run:
 build-run: build run
 
 clean:
-	rm -f *.o $(APP_NAME)
+	rm -f $(BIN_PATH)/*.o $(APP_NAME)
