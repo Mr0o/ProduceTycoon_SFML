@@ -11,6 +11,7 @@ SRC_PATH = ./src
 BIN_PATH = ./bin
 
 build:./$(SRC_PATH)/main.cpp
+	mkdir -p $(BIN_PATH)
 	g++ -c $(SRC_PATH)/main.cpp -o $(BIN_PATH)/main.o
 	g++ $(BIN_PATH)/main.o -o $(APP_NAME) $(FLAGS)
 
